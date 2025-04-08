@@ -1,0 +1,40 @@
+---
+const systemInfo = {
+  OS: "Portfolio OS",
+  Host: "developer",
+  Kernel: "5.0.0-portfolio",
+  Shell: "portfolio-shell",
+  Terminal: "portfolio-term",
+  Skills: "TypeScript, React, Node.js",
+  Languages: "JavaScript, Python, Go",
+};
+
+const asciiArt = `
+    ████████████████  
+    ████████████████  
+    ████████████████  
+    ████████████████  
+    ████████████████  
+    ████████████████  
+    ████████████████  
+    ████████████████  `;
+---
+
+<div class="neofetch">
+  <pre class="ascii-art">{asciiArt}</pre>
+  <div class="system-info">
+    <div class="title">
+      <span class="user">guest</span>
+      <span class="separator">@</span>
+      <span class="hostname">portfolio</span>
+    </div>
+    <div class="info-separator">--------------------------</div>
+    {
+      Object.entries(systemInfo).map(([key, value]) => (
+        <div class="info-line">
+          <span class="key">{key}</span>: <span class="value">{value}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>

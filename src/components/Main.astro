@@ -1,0 +1,32 @@
+---
+import Neofetch from './Neofetch.astro';
+
+const commands = [
+	{ command: 'whoami', output: 'Portfolio' },
+	{ command: 'pwd', output: '/home/developer' },
+	{ command: 'ls', output: ['About', 'Projects', 'Contact'].join('\n') },
+];
+---
+
+<div class="terminal-content">
+	<Neofetch />
+	{commands.map((cmd) => (
+		<div class="command-block">
+			<div class="prompt">
+				<span class="user">guest</span>
+				<span class="separator">@</span>
+				<span class="hostname">portfolio</span>
+				<span class="separator">:~$</span>
+				<span class="command">{cmd.command}</span>
+			</div>
+			<pre class="output">{cmd.output}</pre>
+		</div>
+	))}
+	<div class="prompt current">
+		<span class="user">guest</span>
+		<span class="separator">@</span>
+		<span class="hostname">portfolio</span>
+		<span class="separator">:~$</span>
+		<span class="cursor"></span>
+	</div>
+</div>
